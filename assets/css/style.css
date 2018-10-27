@@ -77,7 +77,7 @@ button {
 
 /* #endregion Document Setup */
 /* #region Page Setup */
-.trivia__questions {
+.trivia__game {
   display: block;
   height: 100vh;
   overflow-x: hidden;
@@ -91,7 +91,7 @@ h1 {
   font-size: 1.8rem;
   line-height: 1.5;
   margin: 0;
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem 2rem 1rem;
 }
 
 hr {
@@ -107,8 +107,32 @@ hr {
 
 .danger {
   color: #ff0000;
-  -webkit-animation: danger .5s linear infinite;
-          animation: danger .5s linear infinite;
+  -webkit-animation: danger .75s linear infinite;
+          animation: danger .75s linear infinite;
+}
+
+.trivia__message,
+.trivia__game-over,
+.trivia__game-start,
+.trivia__wrong-answer {
+  text-align: center;
+}
+
+.trivia__game-start > h1,
+.trivia__game-over > h1,
+.trivia__answer-display,
+.trivia__message > h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.trivia__message-details > h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  text-align: center;
 }
 
 .trivia__card {
@@ -149,55 +173,76 @@ hr {
 }
 
 .trivia__card-answers {
-  padding: 2rem;
+  padding: 1rem 2rem 2rem;
 }
 
-.trivia__card-choices {
+.trivia__card-choices, .trivia__card-replay {
   display: flex;
   align-content: center;
-  align-items: baseline;
-  flex-flow: row nowrap;
+  flex-flow: column wrap;
   justify-content: space-between;
 }
 
-.trivia__card-answer {
+.trivia__card-answer, .trivia__card-start-btn, .trivia__card-play {
   background-color: #e5e5e5;
   color: #333;
   cursor: pointer;
+  flex: 1 1 auto;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
   min-height: 2.5rem;
   min-width: 8.5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   width: auto;
 }
 
-.trivia__card-answer:first-child {
-  margin-left: 0;
-}
-
-.trivia__card-answer:last-child {
-  margin-right: 0;
-}
-
-.trivia__card-answer:focus {
+.trivia__card-answer:focus, .trivia__card-start-btn:focus, .trivia__card-play:focus {
   outline: none;
 }
 
-.trivia__card-answer:active {
+.trivia__card-answer:active, .trivia__card-start-btn:active, .trivia__card-play:active {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
   transition: none;
 }
 
-.trivia__card-answer:hover {
-  background-color: #b3b3b3;
+.trivia__card-answer:hover, .trivia__card-start-btn:hover, .trivia__card-play:hover {
+  background-color: #b3b2b2;
 }
 
-.trivia__card-answer:active {
+.trivia__card-answer:active, .trivia__card-start-btn:active, .trivia__card-play:active {
   background-color: #595959;
+}
+
+.trivia__card-play, .trivia__card-start-btn {
+  background-color: #633e95;
+  color: #fff;
+  min-width: 25%;
+}
+
+.trivia__card-play:hover, .trivia__card-start-btn:hover {
+  background-color: #4b2f71;
+}
+
+.trivia__card-play:active, .trivia__card-start-btn:active {
+  background-color: #3f285f;
+}
+
+.trivia__card-start-btn {
+  max-width: 50%;
+  padding: 1.5rem;
+}
+
+.trivia__card-replay {
+  display: block;
+}
+
+.final > .trivia__card-wrap {
+  padding-bottom: 2rem;
 }
 
 /* #endregion Card Setup */

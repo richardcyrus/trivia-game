@@ -21,9 +21,9 @@
     - Display an option to start the game again.
 
 **Note:** For all display options in the game, do not reload the page.
-    - This applies to the change of questions
-    - The game statistics display at the end.
-    - Starting the game again if the player chooses to do so.
+- This applies to the change of questions
+- The game statistics display at the end.
+- Starting the game again if the player chooses to do so.
 
 ## Notes
 
